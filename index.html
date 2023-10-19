@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
+    <nav id="outer-nav">
       <div id="top-left-name">Zachariah Blair</div>
-      <div class="nav-button">Home</div>
-      <div class="nav-button">About</div>
-      <div class="nav-button">Skills</div>
-      <div class="nav-button">Work Experience</div>
-      <div class="nav-button">Resume</div>
+      <nav id="inner-nav">
+        <a class="nav-button" href="#home">Home</a>
+        <a class="nav-button" href="#about">About</a>
+        <a class="nav-button" href="#skills">Skills</a>
+        <a class="nav-button" href="#experience">Work Experience</a>
+        <a class="nav-button" href="#resume-section">Resume</a>
+      </nav>
     </nav>
+    <div class="nav-placeholder"></div>
     <div id="home">
       <div id="image-text">
         <h1 class="big left">ZACHARIAH BLAIR</h1>
@@ -26,7 +29,6 @@
       </div>
     </div>
     <div id="about">
-      <img id="headshot" src="photos/Zach-2.jpg" alt="my photo" />
       <div id="about-text">
         <h1 class="big">All About Me</h1>
         <p>
@@ -56,6 +58,7 @@
           of life for all who rely upon their contributions.
         </p>
       </div>
+      <img id="headshot" src="photos/Zach-2.jpg" alt="my photo" />
     </div>
     <div id="skills">
       <h1 class="big">Skills</h1>
@@ -123,9 +126,16 @@
     <div id="resume-section">
       <h1 class="big">Resume</h1>
       <p>
-        If you would like to see all this info about me (and a bit more) in a more traditional format, you can download my resume here
+        If you would like to see all this info about me in a
+        more traditional format, you can download my resume here
       </p>
-      <a class="button" href="photos/Zachariah Blair.pdf" download="Zachariah_Blair" target="_blank">Resume</a>
+      <a
+        class="button"
+        href="photos/Zachariah Blair.pdf"
+        download="Zachariah_Blair"
+        target="_blank"
+        >Resume</a
+      >
     </div>
   </body>
 </html>

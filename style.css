@@ -2,6 +2,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -9,45 +13,56 @@ body {
   margin: 0;
 }
 
-nav {
+#outer-nav {
+  position: fixed;
+  top: 0;
+  background-color: #90b8c0;
+  width: 100%;
+}
+#inner-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0;
   width: 100%;
-  height: 70px;
-  background-color: #90b8c0;
-  z-index: 2;
+  z-index: 3;
 }
 nav div {
   padding: 26px 30px;
 }
+nav div:hover {
+  cursor: default;
+}
 
+.nav-button {
+  padding: 26px 30px;
+  text-decoration: none;
+  color: black;
+}
 .nav-button:hover {
   background-color: #99a9af;
   cursor: pointer;
 }
 
+.nav-placeholder {
+  width: 100%;
+  height: 70px;
+}
+
 #top-left-name {
   position: absolute;
   left: 0;
+  z-index: 3;
 }
 
 #home {
-    position: relative;
-    top: 70px;
-    background-image: url("photos/remy_loz-3S0INpfREQc-unsplash.jpg");
-    background-size: 100vw;
-    width: 100%;
-    height: 60vw;
-
+  background-image: url("photos/remy_loz-3S0INpfREQc-unsplash.jpg");
+  background-size: 100vw;
+  width: 100%;
+  height: 60vw;
+  min-height: 710px;
 }
 
 #image-text {
-  top: 250px;
-  left: 0;
-  right: 0;
   margin-top: 100px;
   padding: 0px 100px;
   color: black;
@@ -65,7 +80,6 @@ nav div {
   width: 500px;
 }
 .right {
-  position: relative;
   margin-left: auto;
   top: -50px;
   width: 590px;
@@ -73,33 +87,32 @@ nav div {
   font-family: "Lucida Console", Monaco, monospace;
 }
 #intro {
-  position: relative;
-  top: -100px;
   width: 400px;
   font-size: 200%;
   color: white;
 }
 
 #about {
+  display: flex;
+  justify-content: space-around;
   background-image: linear-gradient(to bottom right, #a39c8a, #514c43);
   border-top: 10px solid #a39c8a;
   width: calc(100% - 200px);
-  height: 800px;
   text-align: left;
   padding: 100px;
 }
 
 #about-text {
   width: 600px;
+  margin: 0 40px;
 }
 #about-text p {
   font-size: 140%;
 }
 
 #headshot {
-  position: absolute;
-  right: 100px;
-  top: 1256px;
+  margin: 0 40px;
+  margin-top: 110px;
   object-fit: cover;
   width: 575px;
   height: 575px;
@@ -107,9 +120,8 @@ nav div {
 }
 
 #skills {
-  background:
-    radial-gradient(at 79% 82%, #352222 0px, transparent 50%) repeat scroll 0%
-      0%,
+  background: radial-gradient(at 79% 82%, #352222 0px, transparent 50%) repeat
+      scroll 0% 0%,
     radial-gradient(at 96% 10%, #41462b 0px, transparent 50%) repeat scroll 0%
       0%,
     radial-gradient(at 4% 5%, #0a0504 0px, transparent 50%) repeat scroll 0% 0%,
@@ -118,7 +130,6 @@ nav div {
 
   border-top: 10px solid #41462b;
   width: calc(100% - 200px);
-  height: 800px;
   text-align: left;
   padding: 0 100px;
   color: white;
@@ -127,98 +138,166 @@ nav div {
   align-items: center;
   justify-content: space-evenly;
 }
+#skills h1 {
+  margin-top: 75px;
+}
 
 .row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 100px 0;
 }
 
 .row img {
-    height: 100px;
+  height: 100px;
 }
 
 #experience {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 100px;
-    width: calc(100% - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px;
+  width: calc(100% - 200px);
 }
 #experience div img {
-    width: 40%;
+  width: 40%;
 }
 
 #experience-text p {
-    text-align:justify;
-    font-size: 150%;
+  text-align: justify;
+  font-size: 150%;
+  max-width: 1000px;
 }
 
 #AV {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 50px;
 }
 
-
 #AV-text {
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
 }
 
 #AV-text p {
-    font-size: x-large;
+  font-size: x-large;
 }
 
 #Forklift {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 100px;
 }
 
-
 #Forklift-text {
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
 }
 
 #Forklift-text p {
-    font-size: x-large;
+  font-size: x-large;
 }
 
 #resume-section {
-    background-color: black;
-    color: white;
-    width: calc(100% - 200px);
-    padding: 100px;
-    padding-bottom: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: black;
+  color: white;
+  width: calc(100% - 200px);
+  padding: 100px;
+  min-height: 400px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #resume-section p {
-    width: 60%;
-    font-size: xx-large;
-    text-align: center;
+  width: 60%;
+  font-size: xx-large;
+  text-align: center;
 }
 
 .button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #90b8c0;
-    color: black;
-    font-size: xx-large;
-    text-align: center;
-    width: 200px;
-    height: 60px;
-    border-radius: 10px;
-    text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #90b8c0;
+  color: black;
+  font-size: xx-large;
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  text-decoration: none;
 }
 .button:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 920px) {
+  #outer-nav {
+    display: flex;
+    flex-direction: column;
+  }
+  #inner-nav {
+    justify-content: left;
+  }
+  #top-left-name {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  #home {
+    background-size: cover;
+  }
+  #headshot {
+    width: 54vw;
+    height: 54vw;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  #about {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #headshot {
+    margin: 0;
+    margin-bottom: 50px;
+  }
+
+  #about-text h1 {
+    text-align: center;
+  }
+
+  #experience {
+    align-items: center;
+  }
+  #experience div div {
+    width: 70%
+  }
+
+  #AV {
+    flex-direction: column;
+    align-items: center;
+  }
+  #AV h1,
+  p {
+    text-align: center;
+  }
+
+  #Forklift {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #Forklift h1,
+  p {
+    text-align: center;
+  }
 }
